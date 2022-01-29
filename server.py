@@ -14,10 +14,10 @@ def index():
 @app.route("/guess/<name>")
 def guessify(name):
     guesses = GuessifyApi()
-    print(guesses.get_predictions(name))
-    age = 12
-    gender = 'male'
-    nationality = 'Indian'
+    predictions = guesses.get_predictions(name)
+    age = predictions[1]['age']
+    gender = predictions[0]['gender']
+    nationality = predictions[2]['country'][0]['country_id']
     return render_template("guess.html",
                            name=name,
                            age=age,
