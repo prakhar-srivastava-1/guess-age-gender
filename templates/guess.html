@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guessify!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main>
+        <div class="container-fluid bg-dark text-light p-2">
+            <div class="container">
+                <h1>Here's what I think 🕵️</h1>
+            </div>
+        </div>
+
+        <div class="container fs-3">
+            <p class="mt-2">
+                Since your name is <b>{{ name|title }}</b>, I believe,<br>
+                you are {{ age }} years old, a {{ gender }} and {{ nationality }}
+                by nationality.
+            </p>
+            <p class="fs-5">
+                Unhappy with my prediction? 😞
+                <br>
+                Wanna <a href="{{ url_for('index') }}">try again</a>! 😃
+            </p>
+        </div>
+
+    </main>
+    <footer class="container-fluid bg-secondary text-light p-2 fixed-bottom">
+        <div class="container">
+            <p>
+                &copy Copyright {{ year }}. Built by Prakhar.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

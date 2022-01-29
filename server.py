@@ -11,5 +11,17 @@ def index():
     return render_template("index.html", year=year)
 
 
+@app.route("/guess/<name>")
+def guessify(name):
+    age = 12
+    gender = 'male'
+    nationality = 'Indian'
+    return render_template("guess.html",
+                           name=name,
+                           age=age,
+                           gender=gender,
+                           nationality=nationality)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
