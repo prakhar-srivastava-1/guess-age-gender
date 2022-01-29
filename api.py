@@ -16,6 +16,6 @@ class GuessifyApi(object):
             "name": name
         }
         for endpoint in self.endpoints:
-            predictions = requests.request(self.endpoints[endpoint], params=params)
-            response.append(predictions)
+            predictions = requests.request(url=self.endpoints[endpoint], params=params, method='GET')
+            response.append(predictions.json())
         return response
