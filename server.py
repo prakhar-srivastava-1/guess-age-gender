@@ -1,6 +1,6 @@
 import datetime
-
 from flask import Flask, render_template
+from api import GuessifyApi
 
 app = Flask(__name__)
 
@@ -13,6 +13,8 @@ def index():
 
 @app.route("/guess/<name>")
 def guessify(name):
+    guesses = GuessifyApi()
+    print(guesses.get_predictions(name))
     age = 12
     gender = 'male'
     nationality = 'Indian'
